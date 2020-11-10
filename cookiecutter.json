@@ -1,0 +1,11 @@
+{
+    "project_name": "R project",
+    "project_desc": "Project Description",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "author": "Author full name or institution",
+    "email": "your email",
+    "License": ["None", "MIT", "Apache"],
+    "git_remote": "If known. [Enter] to ignore",
+    "build_engine": ["Makefile", "R-script"],
+    "dependency_manager": ["renv", "none"]
+}
