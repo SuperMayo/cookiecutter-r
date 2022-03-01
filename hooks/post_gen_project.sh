@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
+# Dependency manager
+####################
+{% if cookiecutter.dependency_manager == "renv" %}
+Rscript -e "renv::init()"
+{% endif %}
 
 # Build tool
+############
 {% if cookiecutter.build_engine != "Makefile" %}
 rm Makefile
 {% endif %}
@@ -9,13 +15,19 @@ rm Makefile
 rm main.R
 {% endif %}
 
-# Dependency manager
+{% if cookiecutter.build_engine == "DVC" %}
+dvc init
+{$endif %}
+
+{% if cookiecutter.build_engine == "R Targets"}
 {% if cookiecutter.dependency_manager == "renv" %}
-Rscript -e "renv::init()"
+Rscript -e "renv::install('targets')"
+{% endif %}
+touch _targets.R
 {% endif %}
 
-
 # Git
+#####
 git init
 git config user.email {{cookiecutter.email}}
 git add .
