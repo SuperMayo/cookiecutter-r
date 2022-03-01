@@ -6,6 +6,6 @@
     "email": "your email",
     "License": ["None", "MIT", "Apache"],
     "git_remote": "If known. [Enter] to ignore",
-    "build_engine": ["Makefile", "R-script"],
+    "build_engine": ["Makefile", "R-script", "R Targets", "DVC"],
     "dependency_manager": ["renv", "none"]
 }
